@@ -3,13 +3,53 @@
 <head>
     <title>Contact</title>
 
-    
+   
     <link rel="stylesheet" href="style.css">
 
-    
+   
     <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav {
+            background-color: #374151;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .card {
+            background-color: white;
+            width: 350px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px gray;
+        }
+
         label {
             color: purple;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -17,7 +57,7 @@
 <body>
 
 <header>
-    <h1>Contact Me</h1>
+    <h1 style="color: orange;">Contact Me</h1> 
 </header>
 
 <nav>
@@ -28,19 +68,40 @@
 </nav>
 
 <section>
-    <form>
-        <label>Name:</label><br>
-        <input type="text"><br><br>
 
-        <label>Email:</label><br>
-        <input type="email"><br><br>
+    <div class="card">
 
-        <input type="submit" value="Submit" style="background-color: green; color: white;">
-        
-    </form>
+        <h2 style="text-align: center; color: darkblue;">Send a Message</h2> 
+
+        <form>
+
+            <label>Name:</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Phone:</label>
+            <input type="tel" placeholder="Enter your phone number">
+
+            <label>Message:</label>
+            <textarea rows="4" placeholder="Write your message here"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Submit"
+                   style="background-color: green; color: white; border: none; cursor: pointer;">
+          
+
+            <input type="reset" value="Reset"
+                   style="background-color: red; color: white; border: none; cursor: pointer;">
+            
+
+        </form>
+
+    </div>
+
 </section>
-
-
 
 </body>
 </html>
