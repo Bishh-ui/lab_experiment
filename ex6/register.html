@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register - Shopnosis</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+form{
+    background:white;
+    padding:25px;
+    width:320px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#1f2937;
+    color:white;
+    border:none;
+}
+.error{color:red;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<form onsubmit="return validateRegister()">
+<h2>Create Account</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<input type="password" id="confirm" placeholder="Confirm Password">
+
+<p id="msg" class="error"></p>
+<button>Register</button>
+</form>
+
+<script>
+function validateRegister(){
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("email").value;
+    let pass=document.getElementById("password").value;
+    let confirm=document.getElementById("confirm").value;
+
+    if(name==""||email==""||pass==""||confirm==""){
+        msg.innerHTML="All fields are required";
+        return false;
+    }
+
+    if(pass.length<6){
+        msg.innerHTML="Password must be at least 6 characters";
+        return false;
+    }
+
+    if(pass!=confirm){
+        msg.innerHTML="Passwords do not match";
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>

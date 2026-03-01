@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopnosis - Home</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Shopnosis</h1>
+    <p>Your MCDM online store</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="products.html">Products</a> |
+    <a href="cart.html">Cart</a> |
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+    
+    <section>
+        <h2 onmouseover="hoverWelcome(this)" onmouseout="normalWelcome(this)">
+            Welcome
+        </h2>
+        <p>Shopnosis offers quality products at affordable prices.</p>
+    </section>
+
+    
+    <section>
+        <h2>Customer Satisfaction</h2>
+        <p>Rating:</p>
+        <meter value="4.5" min="0" max="5">4.5</meter>
+    </section>
+
+   
+    <section>
+        <h2>Order Progress</h2>
+        <progress value="70" max="100"></progress>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Select Product Category</h2>
+        <select onchange="categorySelected(this.value)">
+            <option value="">Choose Category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Shoes">Shoes</option>
+        </select>
+        <p id="categoryMsg"></p>
+    </section>
+
+    <hr>
+
+    
+    <section>
+        <button onclick="addToCart()">Add Featured Item to Cart</button>
+        <p id="cartMsg"></p>
+    </section>
+
+    <hr>
+
+   
+    <section>
+        <h2>Subscribe Newsletter</h2>
+        <form onsubmit="return subscribeUser()">
+            <input type="email" id="email" placeholder="Enter Email">
+            <button>Subscribe</button>
+        </form>
+        <p id="subscribeMsg"></p>
+    </section>
+
+</main>
+
+
+<script>
+
+function hoverWelcome(x){
+    x.style.color="blue";
+}
+
+function normalWelcome(x){
+    x.style.color="black";
+}
+
+function categorySelected(value){
+    document.getElementById("categoryMsg").innerHTML =
+    "You selected: " + value;
+}
+
+function addToCart(){
+    document.getElementById("cartMsg").innerHTML =
+    "Item added to cart successfully!";
+}
+
+function subscribeUser(){
+    var email=document.getElementById("email").value;
+
+    if(email==""){
+        alert("Please enter email");
+        return false;
+    }
+
+    document.getElementById("subscribeMsg").innerHTML =
+    "Thank you for subscribing!";
+    return false;
+}
+
+</script>
+
+</body>
+</html>

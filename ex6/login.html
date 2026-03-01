@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Shopnosis</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+form{
+    background:white;
+    padding:25px;
+    width:300px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#1f2937;
+    color:white;
+    border:none;
+}
+
+.error{color:red;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<form onsubmit="return validateLogin()">
+<h2>User Login</h2>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+
+<p id="msg" class="error"></p>
+<button>Login</button>
+</form>
+
+<script>
+function validateLogin(){
+    let email=document.getElementById("email").value;
+    let pass=document.getElementById("password").value;
+
+    if(email=="" || pass==""){
+        msg.innerHTML="Enter email and password";
+        return false;
+    }
+
+    if(pass.length<6){
+        msg.innerHTML="Invalid password";
+        return false;
+    }
+
+    alert("Login Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>

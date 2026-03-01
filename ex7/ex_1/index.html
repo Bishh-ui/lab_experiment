@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<p>Hello! This is my first personal website created using basic HTML tags without any CSS code.</p>
+
+<hr>
+
+<h2>Navigation</h2>
+<a href="index.html">Home</a><br>
+<a href="about.html">About Me</a><br>
+<a href="education.html">Education</a><br>
+<a href="contact.html">Contact</a><br>
+<a href="scientific.html">Scientific Calculator</a>
+
+<hr>
+
+<h2>Event Handling Demo</h2>
+
+
+<button onclick="showMessage()">Click Me</button>
+<p id="msg"></p>
+
+<br>
+
+
+<h3 onmouseover="hoverText(this)" onmouseout="normalText(this)">
+    Move your mouse over this text
+</h3>
+
+<br>
+
+
+<input type="text" id="nameBox" placeholder="Type your name"
+       onkeyup="typingEvent()">
+<p id="typing"></p>
+
+<hr>
+
+<p>Thank you for visiting here !!!!!!</p>
+
+
+<script>
+function showMessage(){
+    document.getElementById("msg").innerHTML =
+    "Welcome to my Personal Website!";
+}
+
+function hoverText(x){
+    x.style.color = "red";
+}
+
+function normalText(x){
+    x.style.color = "black";
+}
+
+function typingEvent(){
+    var name = document.getElementById("nameBox").value;
+    document.getElementById("typing").innerHTML =
+    "You are typing: " + name;
+}
+</script>
+
+</body>
+</html>
