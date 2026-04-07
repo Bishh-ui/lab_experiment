@@ -17,9 +17,11 @@ if (!isset($_SESSION['cart'])) {
 $cart = $_SESSION['cart'];
 $total = 0;
 foreach ($cart as $item) {
-    // Calculate total, but since price is string, skip for now
+    $price = floatval(str_replace(['₹', ',', ' '], '', $item['price']));
+    $total += $price * $item['quantity'];
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +35,9 @@ foreach ($cart as $item) {
 
 <nav>
     <a href="index.html">Home</a> |
-    <a href="products.html">Products</a> |
+    <a href="products.php">Products</a> |
     <a href="cart.php">Cart</a> |
-    <a href="contact.html">Contact</a>
+    <a href="contact.php">Contact</a>
 </nav>
 
 <main>
@@ -66,7 +68,7 @@ foreach ($cart as $item) {
 </main>
 
 <footer>
-    <p>Total Amount: ₹70,000</p>
+    <p>Total Amount: ₹<?php echo number_format($total, 2); ?></p>
 </footer>
 
 </body>

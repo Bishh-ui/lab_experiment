@@ -11,9 +11,9 @@
 
 <nav>
     <a href="index.html">Home</a> |
-    <a href="products.html">Products</a> |
-    <a href="cart.html">Cart</a> |
-    <a href="contact.html">Contact</a>
+    <a href="products.php">Products</a> |
+    <a href="cart.php">Cart</a> |
+    <a href="contact.php">Contact</a>
 </nav>
 
 <main>
